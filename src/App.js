@@ -1,11 +1,18 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./Pages/Home/Home";
+import Nav from "./Components/Header/Nav";
+import { Home, NotFound, Survey } from "./Pages";
+import Freelances from "./Pages/Freelances";
 
 function App() {
   return (
     <>
+      <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/survey/:questionNumber" element={<Survey />} />
+        <Route path="/results" element={<div>Resultats</div>} />
+        <Route path="/freelances" element={<Freelances />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
