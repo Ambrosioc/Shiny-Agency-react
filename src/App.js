@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
+import NotFound from "./Components/Error/NotFound";
 import Nav from "./Components/Header/Nav";
-import { Home, NotFound, Survey } from "./Pages";
+import { Home, Survey } from "./Pages";
 import Freelances from "./Pages/Freelances";
 
 function App() {
