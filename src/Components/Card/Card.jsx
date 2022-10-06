@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 function Card(props) {
   // <= this is a component that will render a card with the props passed to it
   return (
-    <div style={{ display: "flex", flexDirection: "colum", padding: 15 }}>
+    <div style={{ display: "flex", flexDirection: "column", padding: 15 }}>
+      <span>{props.title}</span>
       <span>{props.label}</span>
       <img src={props.picture} alt="freelance" heignt={80} width={80} />
-      <span>{props.title}</span>
     </div>
   );
 }
