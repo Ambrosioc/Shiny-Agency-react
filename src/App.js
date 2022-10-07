@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import NotFound from "./Components/Error/NotFound";
-import Nav from "./Components/Header/Nav";
-import { Home, Survey } from "./Pages";
-import Freelances from "./Pages/Freelances/Freelances";
+import NotFound from "./components/error/NotFound";
+import Nav from "./components/header/Nav";
+import { Home, Survey } from "./pages";
+import Freelances from "./pages/freelances/Freelances";
 
 function App() {
   return (

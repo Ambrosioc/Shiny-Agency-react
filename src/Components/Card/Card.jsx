@@ -1,15 +1,44 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+import color from "../../utils/styles/colors";
+
+const CardLabel = styled.span`
+  color: #5843e4;
+  font-size: 22px;
+  font-weight: bold;
+`;
+
+const CardPicture = styled.img`
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+`;
+
+const CardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: ${color.backgroundLight};
+  border-radius: 30px;
+  width: 350px;
+  height: 350px;
+  transition: 200ms;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+`;
 
 // <== props is an object and i can destructure it Card({jobTitle, picture, name}) ==>
-function Card(props) {
+function Card({ title, label, picture }) {
   // <= this is a component that will render a card with the props passed to it
   return (
-    <div style={{ display: "flex", flexDirection: "column", padding: 15 }}>
-      <span>{props.title}</span>
-      <span>{props.label}</span>
-      <img src={props.picture} alt="freelance" heignt={80} width={80} />
-    </div>
+    <CardWrapper>
+      <span>{title}</span>
+      <CardLabel>{label}</CardLabel>
+      <CardPicture src={picture} alt="freelance" />
+    </CardWrapper>
   );
 }
 
