@@ -3,6 +3,7 @@ import Card from "../../components/card/Card";
 import freelanceProfiles from "./freelanceProfiles";
 import styled from "styled-components";
 
+// <== this is a styled component that will be used in the Freelances component only and will be scoped to the Freelances component only ==>
 const CardsContainer = styled.div`
   display: grid;
   gap: 24px;

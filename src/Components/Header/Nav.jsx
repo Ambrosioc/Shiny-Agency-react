@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import colors from "../../utils/styles/colors";
 
+// <== this is a styled component that will be used in the Nav component only and will be scoped to the Nav component only ==>
 const StyledLink = styled(Link)`
   padding: 15px;
   color: #8186a0;

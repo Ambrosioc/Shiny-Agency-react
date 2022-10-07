@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+// <== this is a styled component that will be used in the Home component only and will be scoped to the Home component only ==>
 const HomeContainer = styled.div`
   width: 100%;
   display: flex;

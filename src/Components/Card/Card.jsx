@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import color from "../../utils/styles/colors";
+import colors from "../../utils/styles/colors";
 
+// <== this is a styled component that will be used in the Card component only and will be scoped to the Card component only ==>
 const CardLabel = styled.span`
   color: #5843e4;
   font-size: 22px;
@@ -19,7 +20,7 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px;
-  background-color: ${color.backgroundLight};
+  background-color: ${colors.backgroundLight};
   border-radius: 30px;
   width: 350px;
   height: 350px;
