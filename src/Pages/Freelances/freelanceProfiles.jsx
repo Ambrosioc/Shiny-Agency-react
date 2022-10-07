@@ -17,6 +17,31 @@ const freelanceProfiles = [
     jobTitle: "Fullstack Developer",
     picture: DafaultPicture,
   },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
 ];
 
 export default freelanceProfiles;
