@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../../components/cards/Card";
+import Card from "../../Components/cards/Card";
 import freelanceProfiles from "./freelanceProfiles";
 import styled from "styled-components";
 
