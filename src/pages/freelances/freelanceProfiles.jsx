@@ -1,4 +1,4 @@
-import DafaultPicture from "../../assets/profileImg.png";
+import DafaultPicture from "../../Assets/profileImg.png";
 
 // This is the data that will be used to render the cards
 const freelanceProfiles = [

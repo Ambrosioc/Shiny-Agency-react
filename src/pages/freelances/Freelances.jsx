@@ -26,7 +26,7 @@ function Freelances() {
   return (
     <ProfilsContainer>
       <h1>Trouvez votre prestataire</h1>
-      <p>Chez Shiny nous réunissons les meilleurs profils pour vous.</p>
+      <p>Chez Shiny nous réunissons les meilleurs profils pour vous. 😌</p>
       <CardsContainer>
         {freelanceProfiles.map(
           (

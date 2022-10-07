@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import NotFound from "./Components/error/NotFound";
 import Nav from "./Components/Header/Nav";
 import { Home, Survey } from "./pages";
-import Freelances from "./pages/Freelances/Freelances";
+import Freelances from "./pages/freelances/Freelances";
 
 function App() {
   return (
