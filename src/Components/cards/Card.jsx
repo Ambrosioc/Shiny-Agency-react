@@ -33,13 +33,13 @@ const CardWrapper = styled.div`
 `;
 
 // <== props is an object and i can destructure it Card({jobTitle, picture, name}) ==>
-function Card({ title, label, picture }) {
+function Card(props) {
   // <= this is a component that will render a card with the props passed to it
   return (
     <CardWrapper>
-      <span>{title}</span>
-      <CardLabel>{label}</CardLabel>
-      <CardPicture src={picture} alt="freelance" />
+      <span>{props.title}</span>
+      <CardLabel>{props.label}</CardLabel>
+      <CardPicture src={props.picture} alt="freelance" />
     </CardWrapper>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import errorSvg from "../../assets/404.svg";
+import errorSvg from "../../Assets/404.svg";
 
 const StyledNotFound = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ function NotFound() {
   return (
     <StyledNotFound>
       <StyletdDiv>
-        <p>Oups...</p>
+        <p>Oups....</p>
         <StyledImg src={errorSvg} alt="404" />
         <p>Il semblerait qu’il y ait un problème</p>
         <p>La page que vous recherchez n’existe pas</p>

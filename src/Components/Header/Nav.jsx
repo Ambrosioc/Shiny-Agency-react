@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import colors from "../../utils/styles/colors";
-import darkLogo from "../../assets/dark-logo.png";
+import darkLogo from "../../Assets/dark-logo.png";
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -36,7 +36,7 @@ function Nav() {
       <StyledImgLogo src={darkLogo} alt="logo" />
       <nav>
         <StyledLink to="/">Accueil</StyledLink>
-        <StyledLink to="/freelances">Profils Freelances</StyledLink>
+        <StyledLink to="/freelances">Profils</StyledLink>
         <StyledLink to="/survey/1" isFullLink>
           Questionnaire
         </StyledLink>
