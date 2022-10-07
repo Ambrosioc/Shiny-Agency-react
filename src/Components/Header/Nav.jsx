@@ -36,7 +36,7 @@ function Nav() {
       <StyledImgLogo src={darkLogo} alt="logo" />
       <nav>
         <StyledLink to="/">Accueil</StyledLink>
-        <StyledLink to="/freelances">Profils</StyledLink>
+        <StyledLink to="/freelances">Profils Freelances</StyledLink>
         <StyledLink to="/survey/1" isFullLink>
           Questionnaire
         </StyledLink>
