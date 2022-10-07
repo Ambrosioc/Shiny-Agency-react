@@ -1,7 +1,367 @@
-import DafaultPicture from "../../Assets/profile.png";
+import DafaultPicture from "../../assets/profileImg.png";
 
 // This is the data that will be used to render the cards
 const freelanceProfiles = [
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Web Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Frontend Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Fullstack Developer",
+    picture: DafaultPicture,
+  },
+  {
+    name: "John Doe",
+    jobTitle: "Backend Developer",
+    picture: DafaultPicture,
+  },
   {
     name: "John Doe",
     jobTitle: "Web Developer",

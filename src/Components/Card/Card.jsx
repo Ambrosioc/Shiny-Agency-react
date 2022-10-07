@@ -28,6 +28,7 @@ const CardWrapper = styled.div`
   &:hover {
     cursor: pointer;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
   }
 `;
 
