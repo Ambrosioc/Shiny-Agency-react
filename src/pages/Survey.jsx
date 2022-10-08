@@ -1,5 +1,32 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import styled from "styled-components";
+import colors from "../utils/styles/colors";
+
+const SurveyConainter = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const QuestionTitle = styled.h2`
+  text-decoration: underline;
+  text-decoration-color: ${colors.primary};
+`;
+
+const QuestionContent = styled.span`
+  margin: 30px;
+`;
+
+const LinkWrapper = styled.div`
+  padding-top: 30px;
+  & a {
+    color: black;
+  }
+  & a:hover {
+    margin-right: 20px;
+  }
+`;
 
 function Survey() {
   const { questionNumber } = useParams(); // <= this is a hook that will get the params from the url
@@ -9,16 +36,18 @@ function Survey() {
   const nextQuestionNumber = questionNumberInt + 1; // <= this is a simple variable that will add 1 to the questionNumberInt
 
   return (
-    <div>
-      <h1>Questionnaire</h1>
-      <h2>Question {questionNumber}</h2>
-      <Link to={`/survey/${prevQuestionNumber}`}>Previous</Link>
-      {questionNumberInt === 10 ? (
-        <Link to="/results">Resultats</Link>
-      ) : (
-        <Link to={`/survey/${nextQuestionNumber}`}>Suivant</Link> // <= this is a ternary operator that will check if the questionNumberInt is equal to 10 if it is it will return a link to the results page else it will return a link to the next question
-      )}
-    </div>
+    <SurveyConainter>
+      <QuestionTitle>Questionnaire</QuestionTitle>
+      <QuestionContent>Question {questionNumber}</QuestionContent>
+      <LinkWrapper>
+        <Link to={`/survey/${prevQuestionNumber}`}>Previous</Link>
+        {questionNumberInt === 10 ? (
+          <Link to="/results">Resultats</Link>
+        ) : (
+          <Link to={`/survey/${nextQuestionNumber}`}>Suivant</Link> // <= this is a ternary operator that will check if the questionNumberInt is equal to 10 if it is it will return a link to the results page else it will return a link to the next question
+        )}
+      </LinkWrapper>
+    </SurveyConainter>
   );
 }
 
