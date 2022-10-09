@@ -41,7 +41,7 @@ function Survey() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://api-shiny-agency-openclassroom.herokuapp.com/survey`)
+    fetch(`http://localhost:8000/survey`)
       .then((response) =>
         response
           .json()
