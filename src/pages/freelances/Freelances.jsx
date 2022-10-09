@@ -27,7 +27,7 @@ function Freelances() {
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:8000/freelances`)
+    fetch(`https://api-shiny-agency-openclassroom.herokuapp.com/freelances`)
       .then((response) => response.json())
       .then((data) => setFreelancersList(data.freelancersList))
       .catch((err) => console.log(err));
