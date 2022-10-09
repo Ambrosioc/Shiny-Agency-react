@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
+import { Loader } from "../utils/Loader";
 import colors from "../utils/styles/colors";
 
 const SurveyConainter = styled.div`
@@ -23,28 +24,51 @@ const LinkWrapper = styled.div`
   & a {
     color: black;
   }
-  & a:hover {
+  & a:first-of-type {
     margin-right: 20px;
   }
 `;
 
 function Survey() {
-  const { questionNumber } = useParams(); // <= this is a hook that will get the params from the url
-  const questionNumberInt = parseInt(questionNumber); // <= this is a function that will convert the string to an integer
+  const { questionNumber } = useParams();
+
+  const questionNumberInt = parseInt(questionNumber);
   const prevQuestionNumber =
-    questionNumberInt === 1 ? 1 : questionNumberInt - 1; // <= this is a ternary operator that will check if the questionNumberInt is equal to 1 if it is it will return 1 else it will return questionNumberInt - 1
-  const nextQuestionNumber = questionNumberInt + 1; // <= this is a simple variable that will add 1 to the questionNumberInt
+    questionNumberInt === 1 ? 1 : questionNumberInt - 1;
+  const nextQuestionNumber = questionNumberInt + 1;
+  const [surveyData, setSurveyData] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(`https://api-shiny-agency-openclassroom.herokuapp.com/survey`)
+      .then((response) =>
+        response
+          .json()
+          .then(
+            ({ surveyData }) => setSurveyData(surveyData),
+            setIsLoading(false)
+          )
+      )
+
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <SurveyConainter>
-      <QuestionTitle>Questionnaire</QuestionTitle>
-      <QuestionContent>Question {questionNumber}</QuestionContent>
+      <QuestionTitle>Questionnaire {questionNumber} </QuestionTitle>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <QuestionContent>{surveyData[questionNumber]} </QuestionContent>
+      )}
       <LinkWrapper>
         <Link to={`/survey/${prevQuestionNumber}`}>Previous</Link>
-        {questionNumberInt === 10 ? (
-          <Link to="/results">Resultats</Link>
+
+        {surveyData[questionNumberInt + 1] ? (
+          <Link to={`/survey/${nextQuestionNumber}`}>Suivant</Link>
         ) : (
-          <Link to={`/survey/${nextQuestionNumber}`}>Suivant</Link> // <= this is a ternary operator that will check if the questionNumberInt is equal to 10 if it is it will return a link to the results page else it will return a link to the next question
+          <Link to="/results">Resultats</Link>
         )}
       </LinkWrapper>
     </SurveyConainter>
