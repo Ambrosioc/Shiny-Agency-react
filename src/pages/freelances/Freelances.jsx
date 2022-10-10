@@ -25,23 +25,32 @@ const CardsContainer = styled.div`
 function Freelances() {
   const [freelancersList, setFreelancersList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   fetch(`http://localhost:8000/freelances`)
+  //     .then((response) => response.json())
+  //     .then((data) => setFreelancersList(data.freelancersList))
+  //     .catch((err) => console.log(err));
+  //   setIsLoading(false);
+  // }, []);
+
   useEffect(() => {
-    setIsLoading(true);
-    fetch(`http://localhost:8000/freelances`)
-      .then((response) => response.json())
-      .then((data) => setFreelancersList(data.freelancersList))
-      .catch((err) => console.log(err));
-    setIsLoading(false);
+    async function fetchData() {
+      setIsLoading(true);
+      const response = await fetch(`http://localhost:8000/freelances`);
+      const { freelancersList } = await response.json();
+      console.log(freelancersList);
+      setFreelancersList(freelancersList);
+      setIsLoading(false);
+    }
+    fetchData();
   }, []);
   return (
     <ProfilsContainer>
       <h1>Trouvez votre prestataire</h1>
       <p>Chez Shiny nous réunissons les meilleurs profils pour vous. 😌</p>
       {isLoading ? (
-        <>
-          <h1>Chargement en cours...</h1>
-          <Loader />
-        </>
+        <Loader />
       ) : (
         <CardsContainer>
           {freelancersList.map(
