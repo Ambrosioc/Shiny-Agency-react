@@ -37,10 +37,13 @@ function Freelances() {
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      const response = await fetch(`http://localhost:8000/freelances`);
-      const { freelancersList } = await response.json();
-      console.log(freelancersList);
-      setFreelancersList(freelancersList);
+      try {
+        const response = await fetch(`http://localhost:8000/freelances`);
+        const { freelancersList } = await response.json();
+        setFreelancersList(freelancersList);
+      } catch (err) {
+        console.log(err);
+      }
       setIsLoading(false);
     }
     fetchData();
