@@ -20,6 +20,7 @@ const CardsContainer = styled.div`
   gap: 24px;
   grid-templete-rows: 350px 350px;
   grid-template-columns: repeat(2, 1fr);
+  
 `;
 
 function Freelances() {

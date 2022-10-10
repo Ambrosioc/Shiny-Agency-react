@@ -5,7 +5,7 @@ import colors from "../../utils/styles/colors";
 
 // <== this is a styled component that will be used in the Card component only and will be scoped to the Card component only ==>
 const CardLabel = styled.span`
-  color: #5843e4;
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
   font-size: 22px;
   font-weight: bold;
 `;
