@@ -13,3 +13,17 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+
+export const SurveyContext = createContext();
+
+export const SurveyProvider = ({ children }) => {
+  const [answers, setAnswers] = useState({});
+  const saveAnswer = (newAnswer) => {
+    setAnswers({ ...answers, ...newAnswer });
+  };
+  return (
+    <SurveyContext.Provider value={{ answers, saveAnswer }}>
+      {children}
+    </SurveyContext.Provider>
+  );
+};
