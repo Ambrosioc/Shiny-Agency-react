@@ -25,8 +25,8 @@ const StyledLink = styled(Link)`
   color: #8186a0;
   text-decoration: none;
   font-size: 18px;
-  ${(props) =>
-    props.isFullLink &&
+  ${({ isFullLink }) =>
+    isFullLink &&
     `color: #fff; border-radius: 30px; background-color: ${colors.primary};`}
 `;
 
@@ -37,7 +37,7 @@ function Nav() {
       <nav>
         <StyledLink to="/">Accueil</StyledLink>
         <StyledLink to="/freelances">Profils</StyledLink>
-        <StyledLink to="/survey/1" isFullLink>
+        <StyledLink to="/survey/1" isFullLink={true}>
           Questionnaire
         </StyledLink>
       </nav>
