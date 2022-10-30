@@ -24,9 +24,13 @@ const CardsContainer = styled.div`
 `;
 
 function Freelances() {
-  const { data, isLoading } = useFetch(`http://localhost:8000/freelances`);
+  const { data, isLoading, error } = useFetch(
+    `http://localhost:8000/freelances`
+  );
   const { freelancersList } = data;
-
+  if (error) {
+    return <span>Il ya un problème</span>;
+  }
   return (
     <ProfilsContainer>
       <h1>Trouvez votre prestataire</h1>
