@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { SurveyContext } from "../utils/context";
 import { Loader } from "../utils/Loader";
 import colors from "../utils/styles/colors";
+import { useFetch } from "../utils/hooks";
 
 const SurveyConainter = styled.div`
   display: flex;
@@ -56,33 +57,18 @@ const ReplyBox = styled.button`
 `;
 function Survey() {
   const { questionNumber } = useParams();
+  const { data, isLoading } = useFetch(`http://localhost:8000/survey`);
+  const { surveyData } = data;
 
   const questionNumberInt = parseInt(questionNumber);
   const prevQuestionNumber =
     questionNumberInt === 1 ? 1 : questionNumberInt - 1;
   const nextQuestionNumber = questionNumberInt + 1;
-  const [surveyData, setSurveyData] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
   const { answers, saveAnswer } = useContext(SurveyContext);
 
   function saveReply(answers) {
     saveAnswer({ [questionNumber]: answers });
   }
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(`http://localhost:8000/survey`)
-      .then((response) =>
-        response
-          .json()
-          .then(
-            ({ surveyData }) => setSurveyData(surveyData),
-            setIsLoading(false)
-          )
-      )
-
-      .catch((err) => console.log(err));
-  }, []);
 
   return (
     <SurveyConainter>
@@ -90,7 +76,9 @@ function Survey() {
       {isLoading ? (
         <Loader />
       ) : (
-        <QuestionContent>{surveyData[questionNumber]} </QuestionContent>
+        <QuestionContent>
+          {surveyData && surveyData[questionNumber]}
+        </QuestionContent>
       )}
       <ReplyWrapper>
         <ReplyBox
@@ -109,7 +97,7 @@ function Survey() {
       <LinkWrapper>
         <Link to={`/survey/${prevQuestionNumber}`}>Previous</Link>
 
-        {surveyData[questionNumberInt + 1] ? (
+        {surveyData && surveyData[questionNumberInt + 1] ? (
           <Link to={`/survey/${nextQuestionNumber}`}>Suivant</Link>
         ) : (
           <Link to="/results">Resultats</Link>
