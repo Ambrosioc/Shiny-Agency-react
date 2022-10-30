@@ -57,7 +57,7 @@ const ReplyBox = styled.button`
 `;
 function Survey() {
   const { questionNumber } = useParams();
-  const { data, isLoading } = useFetch(`http://localhost:8000/survey`);
+  const { data, isLoading, error } = useFetch(`http://localhost:8000/survey`);
   const { surveyData } = data;
 
   const questionNumberInt = parseInt(questionNumber);
@@ -69,7 +69,9 @@ function Survey() {
   function saveReply(answers) {
     saveAnswer({ [questionNumber]: answers });
   }
-
+  if (error) {
+    return <span>Il y a un problème</span>;
+  }
   return (
     <SurveyConainter>
       <QuestionTitle>Questionnaire {questionNumber} </QuestionTitle>
