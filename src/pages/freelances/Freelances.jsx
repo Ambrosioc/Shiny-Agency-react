@@ -1,8 +1,9 @@
 import React from "react";
 import Card from "../../Components/cards/Card";
 import styled from "styled-components";
-import { Loader } from "../../utils/Loader";
+
 import { useFetch } from "../../utils/hooks";
+import { Loader } from "../../utils/styles/Loader";
 
 // <== this is a styled component that will be used in the Freelances component only and will be scoped to the Freelances component only ==>
 

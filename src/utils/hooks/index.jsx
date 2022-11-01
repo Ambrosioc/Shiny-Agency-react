@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { ThemeContext } from "../context";
 
 export function useFetch(url) {
   const [data, setData] = useState({});
@@ -16,4 +17,9 @@ export function useFetch(url) {
   }, [url]);
 
   return { data, isLoading };
+}
+
+export function useTheme() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  return { theme, toggleTheme };
 }
