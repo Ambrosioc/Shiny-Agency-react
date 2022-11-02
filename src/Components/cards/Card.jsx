@@ -46,9 +46,9 @@ function Card(props) {
 
 // <== this is a prop type validation ==>
 Card.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired, // <= this is a prop type required
-  picture: PropTypes.string,
+  picture: PropTypes.string.isRequired,
 };
 
 // <== this is the default value for the props ==>

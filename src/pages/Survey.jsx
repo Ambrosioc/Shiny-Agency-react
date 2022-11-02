@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { SurveyContext } from "../utils/context";
-import { Loader } from "../utils/Loader";
+
 import colors from "../utils/styles/colors";
 import { useFetch } from "../utils/hooks";
+import { Loader } from "../utils/styles/Loader";
 
 const SurveyConainter = styled.div`
   display: flex;
