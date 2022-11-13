@@ -11,3 +11,5 @@ describe("The formatJobList function", () => {
     expect(formatJobList("item3", 3, 2)).toEqual(expectedState);
   });
 });
+
+// Pour cet exercice, vous continuerez à tester pages/results/index.jsx  avec la fonction formatQueryParams
