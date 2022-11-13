@@ -52,7 +52,14 @@ const LoaderWrapper = styled.div`
   justify-content: center;
 `;
 
-function formatFetchParams(answers) {
+export function formatJobList(title, listLength, index) {
+  if (index === listLength - 1) {
+    return title;
+  }
+  return `${title}, `;
+}
+
+export function formatFetchParams(answers) {
   const answerNumbers = Object.keys(answers);
 
   return answerNumbers.reduce((previousParams, answerNumber, index) => {
