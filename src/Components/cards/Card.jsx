@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import colors from "../../utils/styles/colors";
+import { useTheme } from "../../utils/hooks";
 
 // <== this is a styled component that will be used in the Card component only and will be scoped to the Card component only ==>
 const CardLabel = styled.span`
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ theme }) => (theme === "light" ? colors.primary : "#ffffff")};
   font-size: 22px;
   font-weight: bold;
 `;
@@ -16,11 +17,22 @@ const CardPicture = styled.img`
   border-radius: 50%;
 `;
 
+const CardTitle = styled.div`
+  color: ${({ theme }) => (theme === "light" ? "#000000" : "#ffffff")};
+  font-size: 22px;
+  font-weight: normal;
+  align-self: center;
+  height: 25px;
+  display: flex;
+  align-items: center;
+`;
+
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px;
-  background-color: ${colors.backgroundLight};
+  background-color: ${({ theme }) =>
+    theme === "light" ? colors.backgroundLight : colors.backgroundDark};
   border-radius: 30px;
   width: 350px;
   height: 350px;
@@ -34,11 +46,12 @@ const CardWrapper = styled.div`
 
 // <== props is an object and i can destructure it Card({jobTitle, picture, name}) ==>
 function Card(props) {
+  const { theme } = useTheme();
   // <= this is a component that will render a card with the props passed to it
   return (
-    <CardWrapper>
-      <span>{props.title}</span>
-      <CardLabel>{props.label}</CardLabel>
+    <CardWrapper theme={theme}>
+      <CardTitle theme={theme}>{props.title}</CardTitle>
+      <CardLabel theme={theme}>{props.label}</CardLabel>
       <CardPicture src={props.picture} alt="freelance" />
     </CardWrapper>
   );
