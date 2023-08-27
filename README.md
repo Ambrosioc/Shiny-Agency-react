@@ -1,6 +1,6 @@
 # Projet Shiny Agency : Création d'un Site pour une Agence de Freelances
 
-![Logo React](src/Assets/reactjs-ar-21.svg)
+![Logo React](src/Assets/reactjs-ar21.svg)
 
 Ce projet a pour but de concevoir et développer une Single Page Application pour représenter l'agence de freelances Shiny. L'objectif de ce projet est de construire un site web interactif et professionnel, tout en atteignant les objectifs spécifiques suivants :
 
