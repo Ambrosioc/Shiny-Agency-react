@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import styled from "styled-components";
-import { SurveyContext } from "../utils/context";
-import { useFetch, useTheme } from "../utils/hooks";
-import colors from "../utils/styles/colors";
-import { Loader, StyledLink } from "../utils/styles/Loader";
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import { SurveyContext } from '../utils/context';
+import { useFetch, useTheme } from '../utils/hooks';
+import { Loader, StyledLink } from '../utils/styles/Loader';
+import colors from '../utils/styles/colors';
 
 const ResultsContainer = styled.div`
   display: flex;
@@ -11,12 +11,11 @@ const ResultsContainer = styled.div`
   align-items: center;
   margin: 60px 90px;
   padding: 30px;
-  background-color: ${({ theme }) =>
-    theme === "light" ? colors.backgroundLight : colors.backgroundDark};
+  background-color: ${({ theme }) => (theme === 'light' ? colors.backgroundLight : colors.backgroundDark)};
 `;
 
 const ResultsTitle = styled.h2`
-  color: ${({ theme }) => (theme === "light" ? "#000000" : "#ffffff")};
+  color: ${({ theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
   font-weight: bold;
   font-size: 28px;
   max-width: 60%;
@@ -31,15 +30,14 @@ const DescriptionWrapper = styled.div`
 `;
 
 const JobTitle = styled.span`
-  color: ${({ theme }) =>
-    theme === "light" ? colors.primary : colors.backgroundLight};
+  color: ${({ theme }) => (theme === 'light' ? colors.primary : colors.backgroundLight)};
   text-transform: capitalize;
 `;
 
 const JobDescription = styled.div`
   font-size: 18px;
   & > p {
-    color: ${({ theme }) => (theme === "light" ? colors.secondary : "#ffffff")};
+    color: ${({ theme }) => (theme === 'light' ? colors.secondary : '#ffffff')};
     margin-block-start: 5px;
   }
   & > span {
@@ -64,9 +62,9 @@ export function formatFetchParams(answers) {
 
   return answerNumbers.reduce((previousParams, answerNumber, index) => {
     const isFirstParam = index === 0;
-    const separator = isFirstParam ? "" : "&";
+    const separator = isFirstParam ? '' : '&';
     return `${previousParams}${separator}a${answerNumber}=${answers[answerNumber]}`;
-  }, "");
+  }, '');
 }
 
 function Results() {
@@ -74,9 +72,7 @@ function Results() {
   const { answers } = useContext(SurveyContext);
   const fetchParams = formatFetchParams(answers);
 
-  const { data, isLoading, error } = useFetch(
-    `http://localhost:8000/results?${fetchParams}`
-  );
+  const { data, isLoading, error } = useFetch(`http://localhost:8000/results?${fetchParams}`);
 
   if (error) {
     return <span>Il y a un problème</span>;
@@ -94,12 +90,9 @@ function Results() {
         Les compétences dont vous avez besoin :
         {resultsData &&
           resultsData.map((result, index) => (
-            <JobTitle
-              key={`result-title-${index}-${result.title}`}
-              theme={theme}
-            >
+            <JobTitle key={`result-title-${index}-${result.title}`} theme={theme}>
               {result.title}
-              {index === resultsData.length - 1 ? "" : ","}
+              {index === resultsData.length - 1 ? '' : ','}
             </JobTitle>
           ))}
       </ResultsTitle>
@@ -109,10 +102,7 @@ function Results() {
       <DescriptionWrapper>
         {resultsData &&
           resultsData.map((result, index) => (
-            <JobDescription
-              theme={theme}
-              key={`result-detail-${index}-${result.title}`}
-            >
+            <JobDescription theme={theme} key={`result-detail-${index}-${result.title}`}>
               <JobTitle theme={theme}>{result.title}</JobTitle>
               <p>{result.description}</p>
             </JobDescription>

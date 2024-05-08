@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import homeIllustration from "../Assets/home-illustration.svg";
+import React from 'react';
+import styled from 'styled-components';
+import homeIllustration from '../Assets/home-illustration.svg';
 
 // <== this is a styled component that will be used in the Home component only and will be scoped to the Home component only ==>
 const HomeContainer = styled.div`
@@ -39,10 +39,7 @@ function Home() {
     <HomeContainer>
       <StyletdDiv>
         <StyledTitle>
-          <h1>
-            Repérez vos besoins, on s'occupe du reste, avec les meilleurs
-            talents
-          </h1>
+          <h1>Repérez vos besoins, on s'occupe du reste, avec les meilleurs talents</h1>
           <StyledButton>Faire le test </StyledButton>
         </StyledTitle>
         <img src={homeIllustration} alt="home illustration" />

@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import colors from "../../utils/styles/colors";
-import { useTheme } from "../../utils/hooks";
+import PropTypes from 'prop-types';
+import React from 'react';
+import styled from 'styled-components';
+import { useTheme } from '../../utils/hooks';
+import colors from '../../utils/styles/colors';
 
 // <== this is a styled component that will be used in the Card component only and will be scoped to the Card component only ==>
 const CardLabel = styled.span`
-  color: ${({ theme }) => (theme === "light" ? colors.primary : "#ffffff")};
+  color: ${({ theme }) => (theme === 'light' ? colors.primary : '#ffffff')};
   font-size: 22px;
   font-weight: bold;
 `;
@@ -18,7 +18,7 @@ const CardPicture = styled.img`
 `;
 
 const CardTitle = styled.div`
-  color: ${({ theme }) => (theme === "light" ? "#000000" : "#ffffff")};
+  color: ${({ theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
   font-size: 22px;
   font-weight: normal;
   align-self: center;
@@ -31,8 +31,7 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px;
-  background-color: ${({ theme }) =>
-    theme === "light" ? colors.backgroundLight : colors.backgroundDark};
+  background-color: ${({ theme }) => (theme === 'light' ? colors.backgroundLight : colors.backgroundDark)};
   border-radius: 30px;
   width: 350px;
   height: 350px;
@@ -66,7 +65,7 @@ Card.propTypes = {
 
 // <== this is the default value for the props ==>
 Card.defaultProps = {
-  label: "Dev Freelance",
+  label: 'Dev Freelance',
 };
 
 export default Card;

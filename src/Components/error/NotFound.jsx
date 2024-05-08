@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import errorSvg from "../../Assets/404.svg";
+import React from 'react';
+import styled from 'styled-components';
+import errorSvg from '../../Assets/404.svg';
 
 const StyledNotFound = styled.div`
   display: flex;

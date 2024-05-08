@@ -1,9 +1,9 @@
-import React from "react";
-import Card from "../../Components/cards/Card";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import Card from '../../Components/cards/Card';
 
-import { useFetch } from "../../utils/hooks";
-import { Loader } from "../../utils/styles/Loader";
+import { useFetch } from '../../utils/hooks';
+import { Loader } from '../../utils/styles/Loader';
 
 // <== this is a styled component that will be used in the Freelances component only and will be scoped to the Freelances component only ==>
 
@@ -25,9 +25,7 @@ const CardsContainer = styled.div`
 `;
 
 function Freelances() {
-  const { data, isLoading, error } = useFetch(
-    `http://localhost:8000/freelances`
-  );
+  const { data, isLoading, error } = useFetch(`http://localhost:8000/freelances`);
   const { freelancersList } = data;
   if (error) {
     return <span>Il ya un problème</span>;

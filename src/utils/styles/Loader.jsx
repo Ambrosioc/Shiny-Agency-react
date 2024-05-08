@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import { Link } from "react-router-dom";
-import colors from "./colors";
+import { Link } from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
+import colors from './colors';
 
 const rotate = keyframes`
 from {

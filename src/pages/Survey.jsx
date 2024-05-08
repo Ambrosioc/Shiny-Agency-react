@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
-import styled from "styled-components";
-import { SurveyContext } from "../utils/context";
+import React, { useContext } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import { SurveyContext } from '../utils/context';
 
-import colors from "../utils/styles/colors";
-import { useFetch } from "../utils/hooks";
-import { Loader } from "../utils/styles/Loader";
+import { useFetch } from '../utils/hooks';
+import { Loader } from '../utils/styles/Loader';
+import colors from '../utils/styles/colors';
 
 const SurveyConainter = styled.div`
   display: flex;
@@ -47,8 +47,7 @@ const ReplyBox = styled.button`
   background-color: ${colors.backgroundLight};
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: ${(props) =>
-    props.isSelected ? `0px 0px 0px 2px ${colors.primary} inset` : "none"};
+  box-shadow: ${(props) => (props.isSelected ? `0px 0px 0px 2px ${colors.primary} inset` : 'none')};
   &:first-child {
     margin-right: 15px;
   }
@@ -62,8 +61,7 @@ function Survey() {
   const { surveyData } = data;
 
   const questionNumberInt = parseInt(questionNumber);
-  const prevQuestionNumber =
-    questionNumberInt === 1 ? 1 : questionNumberInt - 1;
+  const prevQuestionNumber = questionNumberInt === 1 ? 1 : questionNumberInt - 1;
   const nextQuestionNumber = questionNumberInt + 1;
   const { answers, saveAnswer } = useContext(SurveyContext);
 
@@ -76,24 +74,12 @@ function Survey() {
   return (
     <SurveyConainter>
       <QuestionTitle>Questionnaire {questionNumber} </QuestionTitle>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <QuestionContent>
-          {surveyData && surveyData[questionNumber]}
-        </QuestionContent>
-      )}
+      {isLoading ? <Loader /> : <QuestionContent>{surveyData && surveyData[questionNumber]}</QuestionContent>}
       <ReplyWrapper>
-        <ReplyBox
-          onClick={() => saveReply(true)}
-          isSelected={answers[questionNumber] === true}
-        >
+        <ReplyBox onClick={() => saveReply(true)} isSelected={answers[questionNumber] === true}>
           Oui
         </ReplyBox>
-        <ReplyBox
-          onClick={() => saveReply(false)}
-          isSelected={answers[questionNumber] === false}
-        >
+        <ReplyBox onClick={() => saveReply(false)} isSelected={answers[questionNumber] === false}>
           Non
         </ReplyBox>
       </ReplyWrapper>

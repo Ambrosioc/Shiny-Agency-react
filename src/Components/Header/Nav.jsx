@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import colors from "../../utils/styles/colors";
-import darkLogo from "../../Assets/dark-logo.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import darkLogo from '../../Assets/dark-logo.png';
+import colors from '../../utils/styles/colors';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -25,9 +25,7 @@ const StyledLink = styled(Link)`
   color: #8186a0;
   text-decoration: none;
   font-size: 18px;
-  ${({ isFullLink }) =>
-    isFullLink &&
-    `color: #fff; border-radius: 30px; background-color: ${colors.primary};`}
+  ${({ isFullLink }) => isFullLink && `color: #fff; border-radius: 30px; background-color: ${colors.primary};`}
 `;
 
 function Nav() {
