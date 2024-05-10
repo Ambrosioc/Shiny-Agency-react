@@ -3,7 +3,8 @@ import { ThemeProvider } from '../../utils/context';
 import Footer from './Footer';
 
 describe('Footer', () => {
-  it('Should render without crash', async () => {
+  it('Should render without crash', () => {
+    // Suppression de l'async
     render(
       <ThemeProvider>
         <Footer />
