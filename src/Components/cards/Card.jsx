@@ -12,8 +12,8 @@ const CardLabel = styled.span`
 `;
 
 const CardPicture = styled.img`
-  height: 80px;
-  width: 80px;
+  height: 50%;
+  width: 50%;
   border-radius: 50%;
 `;
 
@@ -30,6 +30,8 @@ const CardTitle = styled.div`
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   padding: 15px;
   background-color: ${({ theme }) => (theme === 'light' ? colors.backgroundLight : colors.backgroundDark)};
   border-radius: 30px;
@@ -60,12 +62,12 @@ function Card(props) {
 Card.propTypes = {
   label: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired, // <= this is a prop type required
-  picture: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired
 };
 
 // <== this is the default value for the props ==>
 Card.defaultProps = {
-  label: 'Dev Freelance',
+  label: 'Dev Freelance'
 };
 
 export default Card;
