@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import { Component } from 'react';
 import styled from 'styled-components';
-import { useTheme } from '../../utils/hooks';
 import colors from '../../utils/styles/colors';
 
-// <== this is a styled component that will be used in the Card component only and will be scoped to the Card component only ==>
 const CardLabel = styled.span`
   color: ${({ theme }) => (theme === 'light' ? colors.primary : '#ffffff')};
   font-size: 22px;
@@ -45,27 +43,29 @@ const CardWrapper = styled.div`
   }
 `;
 
-// <== props is an object and i can destructure it Card({jobTitle, picture, name}) ==>
-function Card(props) {
-  const { theme } = useTheme();
-  // <= this is a component that will render a card with the props passed to it
-  return (
-    <CardWrapper theme={theme}>
-      <CardTitle theme={theme}>{props.title}</CardTitle>
-      <CardLabel theme={theme}>{props.label}</CardLabel>
-      <CardPicture src={props.picture} alt="freelance" />
-    </CardWrapper>
-  );
+class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    const { theme, title, label, picture } = this.props;
+    return (
+      <CardWrapper theme={theme}>
+        <CardTitle theme={theme}>{title}</CardTitle>
+        <CardLabel theme={theme}>{label}</CardLabel>
+        <CardPicture src={picture} alt="freelance" />
+      </CardWrapper>
+    );
+  }
 }
 
-// <== this is a prop type validation ==>
 Card.propTypes = {
   label: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired, // <= this is a prop type required
+  title: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired
 };
 
-// <== this is the default value for the props ==>
 Card.defaultProps = {
   label: 'Dev Freelance'
 };
